@@ -8,6 +8,7 @@ export const Header = () => {
           <div className="w-12 h-12 bg-[#1a1a2e] text-[#c9a84c] rounded-full flex items-center justify-center text-xl font-serif font-bold border-2 border-[#c9a84c]/30">
             ДВ
           </div>
+
           <div>
             <div className="text-lg font-serif font-bold text-[#1a1a2e] tracking-wide">
               {appConfig.company.shortName}
