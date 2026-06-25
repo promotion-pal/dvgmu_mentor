@@ -651,15 +651,24 @@ export default function Index() {
                   className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base resize-none"
                 />
               </div>
+
               <div className="flex items-start gap-2 sm:gap-3">
                 <input
                   type="checkbox"
                   className="mt-1 w-4 h-4 sm:w-5 sm:h-5 border-white/20 bg-white/5 checked:bg-[#c9a84c] rounded flex-shrink-0"
                 />
                 <label className="text-white/40 text-[10px] sm:text-sm font-sans">
-                  Я даю согласие на обработку персональных данных
+                  Я даю согласие на{" "}
+                  <Link
+                    href="/privacy"
+                    className="text-[#c9a84c] hover:text-[#d4b85c] transition hover:underline"
+                    target="_blank"
+                  >
+                    обработку персональных данных
+                  </Link>
                 </label>
               </div>
+
               <button className="w-full bg-[#c9a84c] text-[#1a1a2e] py-3 sm:py-4 rounded-full font-sans uppercase tracking-widest text-xs sm:text-sm hover:bg-[#d4b85c] transition">
                 Отправить заявку
               </button>

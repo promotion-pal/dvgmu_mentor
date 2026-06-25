@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            cd ~/dvgmu_mentor
+            cd ~/work/dvgmu_mentor
             git pull
             docker-compose down
             docker-compose up -d --build
