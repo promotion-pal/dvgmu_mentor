@@ -19,7 +19,6 @@ import { appConfig } from "../shared/app";
 export default function Index() {
   return (
     <div className="min-h-screen bg-white font-serif antialiased">
-      {/* ===== ГЕРОЙ ===== */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0f]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]"></div>
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTAgNTB2M0gzN3YtM2gxM3pNNTAgMzh2M0gzN3YtM2gxM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
@@ -33,7 +32,7 @@ export default function Index() {
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span className="w-8 sm:w-12 h-[2px] bg-[#c9a84c]"></span>
               <span className="text-[#c9a84c] text-[10px] sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-sans font-light">
-                Дополнительное профессиональное образование
+                Дальневосточный учебно-методический центр
               </span>
               <span className="w-8 sm:w-12 h-[2px] bg-[#c9a84c]"></span>
             </div>
