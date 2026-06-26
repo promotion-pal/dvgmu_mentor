@@ -1,10 +1,15 @@
 import {
+  ArrowRightIcon,
+  AwardIcon,
+  BuildingIcon,
   CheckCircleIcon,
   Clock,
+  FileCheckIcon,
   FileText,
   GraduationCap,
   Mail,
   Phone,
+  TargetIcon,
   User,
   UsersIcon,
 } from "lucide-react";
@@ -14,6 +19,7 @@ import { appConfig } from "../shared/app";
 export default function Index() {
   return (
     <div className="min-h-screen bg-white font-serif antialiased">
+      {/* ===== ГЕРОЙ ===== */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0f]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f]"></div>
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTAgNTB2M0gzN3YtM2gxM3pNNTAgMzh2M0gzN3YtM2gxM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
@@ -85,7 +91,7 @@ export default function Index() {
                 Записаться на курс
               </Link>
               <a
-                href="#program"
+                href="#about"
                 className="border border-white/20 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full font-sans uppercase tracking-widest text-xs sm:text-sm hover:bg-white/10 transition flex-1 sm:flex-none text-center"
               >
                 Смотреть программу
@@ -95,7 +101,131 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 bg-white">
+      {/* ===== НАВИГАЦИОННОЕ ОГЛАВЛЕНИЕ ===== */}
+      <section className="py-12 sm:py-16 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 sm:mb-12">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <span className="w-10 sm:w-16 h-[1px] bg-[#c9a84c]"></span>
+                <span className="text-[#c9a84c] text-[10px] sm:text-xs uppercase tracking-[0.3em] font-sans font-light">
+                  Содержание
+                </span>
+                <span className="w-10 sm:w-16 h-[1px] bg-[#c9a84c]"></span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-serif text-[#1a1a2e]">
+                Что вы найдете на этой странице
+              </h3>
+              <p className="text-gray-400 font-sans text-xs sm:text-sm mt-2">
+                Быстрая навигация по основным разделам
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  label: "О центре",
+                  icon: BuildingIcon,
+                  href: "#about-center",
+                  desc: "Дальневосточный учебно-методический центр по наставничеству в здравоохранении создан на базе ДВГМУ. Объединяет ведущих экспертов и практиков для подготовки квалифицированных наставников.",
+                  stats: ["Основан в 2026", "Ведущие эксперты ДВГМУ"],
+                },
+                {
+                  label: "О программе",
+                  icon: TargetIcon,
+                  href: "#about",
+                  desc: "Дополнительная профессиональная программа повышения квалификации. Совершенствование компетенций в области организации, внедрения и сопровождения системы наставничества.",
+                  stats: ["Заочная форма с ДОТ"],
+                },
+                {
+                  label: "Документы",
+                  icon: FileCheckIcon,
+                  href: "#documents",
+                  desc: "Нормативно-правовая база наставничества: Федеральный закон № 424-ФЗ, Положение о наставничестве (приказ № 167н), Заявка на обучение в ИНПОА.",
+                  stats: ["Основные документы"],
+                },
+                {
+                  label: "Состав УМЦ",
+                  icon: UsersIcon,
+                  href: "#teachers",
+                  desc: "Учебно-методический центр возглавляют ведущие специалисты ДВГМУ: проректоры, директора институтов, деканы факультетов — 6 экспертов.",
+                  stats: ["Доктора и кандидаты наук"],
+                },
+                {
+                  label: "Контакты",
+                  icon: Phone,
+                  href: "#contacts",
+                  desc: "По вопросам образовательной деятельности и методического сопровождения наставников вы можете обратиться по указанным телефонам и электронной почте.",
+                  stats: ["Телефон и email"],
+                },
+                {
+                  label: "Вопросы",
+                  icon: AwardIcon,
+                  href: "#faq",
+                  desc: "Ответы на часто задаваемые вопросы о наставничестве: кто должен проходить, сколько длится, где можно проходить, что будет при непрохождении.",
+                  stats: ["Подробные ответы"],
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="group relative p-6 sm:p-8 bg-white border border-gray-100 hover:border-[#c9a84c]/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 block overflow-hidden"
+                  >
+                    <div className="absolute -top-12 -right-12 w-24 h-24 bg-[#c9a84c]/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+
+                    <div className="relative z-10 flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-[#f8f6f0] group-hover:bg-[#c9a84c]/10 transition-all duration-300 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-5 h-5 text-[#c9a84c] group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                      <span className="text-lg sm:text-xl font-serif text-[#1a1a2e] group-hover:text-[#c9a84c] transition-colors duration-300 font-semibold">
+                        {item.label}
+                      </span>
+                    </div>
+
+                    <p className="relative z-10 text-gray-500 font-sans text-sm leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
+
+                    <div className="relative z-10 flex flex-wrap gap-3">
+                      {item.stats.map((stat, i) => (
+                        <span
+                          key={i}
+                          className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-sans text-[#c9a84c] bg-[#c9a84c]/5 px-3 py-1 rounded-full"
+                        >
+                          <span className="w-1 h-1 bg-[#c9a84c] rounded-full"></span>
+                          {stat}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="relative z-10 mt-4 flex items-center gap-2 text-[#c9a84c] font-sans text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span>Перейти к разделу</span>
+                      <ArrowRightIcon className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+
+                    <div className="absolute -bottom-2 -right-2 text-[#c9a84c]/5 font-serif text-7xl font-bold">
+                      {String(
+                        [
+                          "О центре",
+                          "О программе",
+                          "Документы",
+                          "Состав УМЦ",
+                          "Контакты",
+                          "Вопросы",
+                        ].indexOf(item.label) + 1,
+                      ).padStart(2, "0")}
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-24 bg-white" id="about-center">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-16">
             <div className="lg:w-1/2 w-full">
@@ -155,7 +285,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 bg-[#f8f6f0]">
+      <section className="py-12 sm:py-24 bg-[#f8f6f0]" id="about">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -214,69 +344,71 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="about" className="max-w-4xl mx-auto bg-white">
-        <div className="py-12">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="w-6 sm:w-8 h-[1px] bg-[#c9a84c]"></span>
-            <span className="text-[#c9a84c] text-[10px] sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-sans font-light">
-              Документы
-            </span>
-            <span className="w-6 sm:w-8 h-[1px] bg-[#c9a84c]"></span>
-          </div>
-          <h3 className="text-2xl font-serif text-[#1a1a2e] text-center mb-8">
-            Нормативно-правовая база
-          </h3>
+      <section className="py-12 sm:py-24 bg-white" id="documents">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="w-6 sm:w-8 h-[1px] bg-[#c9a84c]"></span>
+              <span className="text-[#c9a84c] text-[10px] sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-sans font-light">
+                Документы
+              </span>
+              <span className="w-6 sm:w-8 h-[1px] bg-[#c9a84c]"></span>
+            </div>
+            <h3 className="text-2xl font-serif text-[#1a1a2e] text-center mb-8">
+              Нормативно-правовая база
+            </h3>
 
-          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-            {[
-              {
-                title: "Заявка на цикл ИНПОА 2026",
-                description:
-                  "Документ для подачи заявки на обучение по программе наставничества в Институте непрерывного профессионального образования и аккредитации (ИНПОА)",
-                file: "Заявка на цикл ИНПОА 2026.doc",
-                icon: "📄",
-              },
-              {
-                title: "Положение о наставничестве",
-                description:
-                  "Утверждено приказом Минздрава России от 5 марта 2026 года № 167н. Регулирует организацию и проведение наставничества в медицинских организациях",
-                file: "Положение о наставничестве от 5.03.2026 № 167н.pdf",
-                icon: "⚖️",
-              },
-              {
-                title: "Федеральный закон № 424-ФЗ",
-                description:
-                  "Федеральный закон от 17 ноября 2025 года № 424-ФЗ «О внесении изменений в отдельные законодательные акты Российской Федерации»",
-                file: "17 ноября 2025 года № 424-ФЗ .pdf",
-                icon: "📜",
-              },
-            ].map((doc, i) => (
-              <a
-                key={i}
-                href={`/documents/${doc.file}`}
-                download
-                className="group p-6 bg-white border border-gray-100 hover:border-[#c9a84c]/30 transition-all duration-300 hover:shadow-xl block"
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {doc.icon}
-                </div>
-                <h4 className="font-serif text-[#1a1a2e] text-base sm:text-lg mb-2 group-hover:text-[#c9a84c] transition-colors duration-300">
-                  {doc.title}
-                </h4>
-                <p className="text-gray-500 font-sans text-xs sm:text-sm leading-relaxed">
-                  {doc.description}
-                </p>
-                <div className="mt-4 flex items-center gap-2 text-[#c9a84c] font-sans text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Скачать</span>
-                  <span className="text-lg">↓</span>
-                </div>
-              </a>
-            ))}
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Заявка на цикл ИНПОА 2026",
+                  description:
+                    "Документ для подачи заявки на обучение по программе наставничества в Институте непрерывного профессионального образования и аккредитации (ИНПОА)",
+                  file: "Заявка на цикл ИНПОА 2026.doc",
+                  icon: "📄",
+                },
+                {
+                  title: "Положение о наставничестве",
+                  description:
+                    "Утверждено приказом Минздрава России от 5 марта 2026 года № 167н. Регулирует организацию и проведение наставничества в медицинских организациях",
+                  file: "Положение о наставничестве от 5.03.2026 № 167н.pdf",
+                  icon: "⚖️",
+                },
+                {
+                  title: "Федеральный закон № 424-ФЗ",
+                  description:
+                    "Федеральный закон от 17 ноября 2025 года № 424-ФЗ «О внесении изменений в отдельные законодательные акты Российской Федерации»",
+                  file: "17 ноября 2025 года № 424-ФЗ .pdf",
+                  icon: "📜",
+                },
+              ].map((doc, i) => (
+                <a
+                  key={i}
+                  href={`/documents/${doc.file}`}
+                  download
+                  className="group p-6 bg-[#f8f6f0] border border-gray-100 hover:border-[#c9a84c]/30 transition-all duration-300 hover:shadow-xl block"
+                >
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {doc.icon}
+                  </div>
+                  <h4 className="font-serif text-[#1a1a2e] text-base sm:text-lg mb-2 group-hover:text-[#c9a84c] transition-colors duration-300">
+                    {doc.title}
+                  </h4>
+                  <p className="text-gray-500 font-sans text-xs sm:text-sm leading-relaxed">
+                    {doc.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-[#c9a84c] font-sans text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span>Скачать</span>
+                    <span className="text-lg">↓</span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 bg-[#f8f6f0]">
+      <section className="py-12 sm:py-24 bg-[#f8f6f0]" id="teachers">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -287,19 +419,12 @@ export default function Index() {
               <span className="w-6 sm:w-8 h-[1px] bg-[#c9a84c]"></span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1a1a2e] mt-3 mb-4">
-              Дальневосточный учебно-методический центр
-              <br />
-              <span className="text-[#c9a84c] text-2xl sm:text-3xl md:text-4xl">
-                по наставничеству в здравоохранении
-              </span>
+              Состав учебно-методического центра
             </h2>
             <div className="w-16 sm:w-20 h-[2px] bg-[#c9a84c] mx-auto"></div>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-2xl font-serif text-[#1a1a2e] text-center mb-8">
-              Состав учебно-методического центра
-            </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
@@ -351,7 +476,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-24 bg-white">
+      <section className="py-12 sm:py-24 bg-white" id="contacts">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -472,6 +597,7 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ===== FAQ ===== */}
       <section className="py-12 sm:py-24 bg-[#f8f6f0]" id="faq">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -558,71 +684,160 @@ export default function Index() {
 
       <section className="py-12 sm:py-24 bg-[#1a1a2e] text-white" id="form">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <span className="text-[#c9a84c] text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-sans font-light">
               Запись на обучение
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mt-3 mb-4">
-              Остались вопросы?
+              Заявка на обучение
             </h2>
             <p className="text-white/60 font-serif text-base sm:text-lg">
-              Напишите нам, и наши методисты оперативно ответят
+              Заполните форму, и наши методисты свяжутся с вами для оформления
+              документов
             </p>
-
-            <form className="mt-8 sm:mt-12 space-y-4 sm:space-y-6 text-left">
-              <div>
-                <label className="text-white/40 text-[10px] sm:text-sm uppercase tracking-widest font-sans block mb-1 sm:mb-2">
-                  Ваше имя
-                </label>
-                <input
-                  type="text"
-                  placeholder="Имя и фамилия"
-                  className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
-                />
-              </div>
-              <div>
-                <label className="text-white/40 text-[10px] sm:text-sm uppercase tracking-widest font-sans block mb-1 sm:mb-2">
-                  Телефон
-                </label>
-                <input
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
-                />
-              </div>
-              <div>
-                <label className="text-white/40 text-[10px] sm:text-sm uppercase tracking-widest font-sans block mb-1 sm:mb-2">
-                  Ваш вопрос
-                </label>
-                <textarea
-                  placeholder="Опишите ваш запрос..."
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base resize-none"
-                />
-              </div>
-
-              <div className="flex items-start gap-2 sm:gap-3">
-                <input
-                  type="checkbox"
-                  className="mt-1 w-4 h-4 sm:w-5 sm:h-5 border-white/20 bg-white/5 checked:bg-[#c9a84c] rounded flex-shrink-0"
-                />
-                <label className="text-white/40 text-[10px] sm:text-sm font-sans">
-                  Я даю согласие на{" "}
-                  <Link
-                    href="/privacy"
-                    className="text-[#c9a84c] hover:text-[#d4b85c] transition hover:underline"
-                    target="_blank"
-                  >
-                    обработку персональных данных
-                  </Link>
-                </label>
-              </div>
-
-              <button className="w-full bg-[#c9a84c] text-[#1a1a2e] py-3 sm:py-4 rounded-full font-sans uppercase tracking-widest text-xs sm:text-sm hover:bg-[#d4b85c] transition">
-                Отправить заявку
-              </button>
-            </form>
           </div>
+
+          <form className="mt-8 sm:mt-12 max-w-3xl mx-auto space-y-4 sm:space-y-6 text-left">
+            <div className="bg-white/5 p-4 sm:p-6 border border-white/10">
+              <h3 className="text-[#c9a84c] font-serif text-base sm:text-lg mb-4">
+                Информация о заявителе
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="sm:col-span-2">
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Ф.И.О. полностью
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Иванов Иван Иванович"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Место жительства
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="г. Хабаровск, ул. ..."
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Место работы
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Название организации"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Должность
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ваша должность"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div>
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Контактный телефон
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+7 (___) ___-__-__"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Электронная почта
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="email@example.com"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/5 p-4 sm:p-6 border border-white/10">
+              <h3 className="text-[#c9a84c] font-serif text-base sm:text-lg mb-4">
+                Информация об организации (для юридических лиц)
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="sm:col-span-2">
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Организация, Ф.И.О. руководителя, должность
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ООО ... , Иванов И.И., главный врач"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Юридический адрес ЛПУ
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="г. Хабаровск, ул. ..."
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans block mb-1">
+                    Банковские реквизиты ЛПУ
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="ИНН, КПП, БИК, р/с"
+                    className="w-full bg-white/5 border border-white/10 rounded-none px-4 sm:px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm sm:text-base"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-2 sm:gap-3">
+              <input
+                type="checkbox"
+                className="mt-1 w-4 h-4 sm:w-5 sm:h-5 border-white/20 bg-white/5 checked:bg-[#c9a84c] rounded flex-shrink-0"
+              />
+              <label className="text-white/40 text-[10px] sm:text-sm font-sans">
+                Я даю согласие на{" "}
+                <Link
+                  href="/privacy"
+                  className="text-[#c9a84c] hover:text-[#d4b85c] transition hover:underline"
+                  target="_blank"
+                >
+                  обработку персональных данных
+                </Link>
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#c9a84c] text-[#1a1a2e] py-3 sm:py-4 rounded-full font-sans uppercase tracking-widest text-xs sm:text-sm hover:bg-[#d4b85c] transition"
+            >
+              Отправить заявку
+            </button>
+
+            <div className="text-center text-white/30 text-xs font-sans">
+              Заявка направляется по электронной почте:{" "}
+              <a
+                href="mailto:fpk@mail.fesmu.ru"
+                className="text-[#c9a84c] hover:underline"
+              >
+                fpk@mail.fesmu.ru
+              </a>
+            </div>
+          </form>
         </div>
       </section>
     </div>

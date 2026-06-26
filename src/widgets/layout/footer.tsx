@@ -117,8 +117,6 @@ export function Footer() {
         </div>
 
         <div className="relative mt-12 pt-10 border-t border-white/5">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
-
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-8 h-[1px] bg-[#c9a84c]/30"></span>

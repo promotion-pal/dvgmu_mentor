@@ -9,9 +9,10 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "О нас", href: "#about" },
-    { label: "Программы", href: "#program" },
-    { label: "Преподаватели", href: "#teachers" },
+    { label: "О центре", href: "#about-center" },
+    { label: "О программе", href: "#about" },
+    { label: "Документы", href: "#documents" },
+    { label: "Состав УМЦ", href: "#teachers" },
     { label: "Контакты", href: "#contacts" },
     { label: "FAQ", href: "#faq" },
   ];
@@ -41,7 +42,7 @@ export const Header = () => {
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10 text-xs xl:text-sm uppercase tracking-widest font-sans">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs xl:text-sm uppercase tracking-widest font-sans">
           {navItems.map((item) => (
             <button
               key={item.label}
@@ -62,7 +63,10 @@ export const Header = () => {
             {appConfig.contacts.phones[0].label}
           </a>
 
-          <button className="bg-[#1a1a2e] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-sans uppercase tracking-widest hover:bg-[#c9a84c] hover:text-[#1a1a2e] transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
+          <button
+            onClick={() => handleNavClick("#form")}
+            className="bg-[#1a1a2e] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-sans uppercase tracking-widest hover:bg-[#c9a84c] hover:text-[#1a1a2e] transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
+          >
             Записаться
           </button>
 
@@ -82,7 +86,7 @@ export const Header = () => {
 
       <div
         className={`lg:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
@@ -95,6 +99,12 @@ export const Header = () => {
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => handleNavClick("#form")}
+            className="bg-[#c9a84c] text-[#1a1a2e] py-3 rounded-full font-sans text-sm uppercase tracking-widest hover:bg-[#d4b85c] transition mt-2"
+          >
+            Записаться
+          </button>
           <div className="pt-2 space-y-2">
             {appConfig.contacts.phones.map((phone, i) => (
               <a
