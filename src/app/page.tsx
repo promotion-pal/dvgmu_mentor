@@ -3,9 +3,7 @@ import {
   AwardIcon,
   BuildingIcon,
   CheckCircleIcon,
-  Clock,
   FileCheckIcon,
-  FileText,
   GraduationCap,
   Mail,
   Phone,
@@ -32,54 +30,47 @@ export default function Index() {
             <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span className="w-8 sm:w-12 h-[2px] bg-[#c9a84c]"></span>
               <span className="text-[#c9a84c] text-[10px] sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] font-sans font-light">
-                Дальневосточный учебно-методический центр
+                Дальневосточный государственный медицинский университет
               </span>
               <span className="w-8 sm:w-12 h-[2px] bg-[#c9a84c]"></span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1]">
-              Организация системы
+            <h1 className="text-3xl md:text-6xl font-serif font-bold text-white leading-[1.1]">
+              Дальневосточный
               <br />
-              <span className="text-[#c9a84c] relative">
-                наставничества
-                <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#c9a84c]/30"></span>
+              <span className="block mt-2 text-white/80">
+                учебно-методический центр
               </span>
-              <span className="text-2xl sm:text-3xl md:text-4xl block mt-2 text-white/80">
-                в учреждениях здравоохранения
+              <span className="text-[#c9a84c] relative">
+                по наставничеству в здравоохранении
               </span>
             </h1>
 
-            <p className="text-base sm:text-xl md:text-2xl text-white/60 font-serif font-light mt-4 sm:mt-8 max-w-2xl leading-relaxed">
-              Дополнительная профессиональная программа повышения квалификации
-            </p>
-
-            <div className="flex flex-wrap gap-4 sm:gap-6 mt-6 sm:mt-10">
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[#c9a84c]/30 rounded-full flex items-center justify-center text-[#c9a84c] text-base sm:text-xl flex-shrink-0">
-                  <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div>
-                  <div className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans">
-                    Объем
-                  </div>
-                  <div className="text-white font-serif text-sm sm:text-lg">
-                    18 академических часов
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 border border-[#c9a84c]/30 rounded-full flex items-center justify-center text-[#c9a84c] text-base sm:text-xl flex-shrink-0">
-                  <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div>
-                  <div className="text-white/40 text-[10px] sm:text-xs uppercase tracking-widest font-sans">
-                    Документ
-                  </div>
-                  <div className="text-white font-serif text-sm sm:text-lg">
-                    Удостоверение о ПК
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-8">
+              <a
+                href="#about"
+                className="border border-white/20 text-white/80 px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm hover:bg-white/10 hover:text-white transition flex-1 sm:flex-none text-center"
+              >
+                Обучение
+              </a>
+              <a
+                href="#about-center"
+                className="border border-white/20 text-white/80 px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm hover:bg-white/10 hover:text-white transition flex-1 sm:flex-none text-center"
+              >
+                Поддержка
+              </a>
+              <a
+                href="#documents"
+                className="border border-white/20 text-white/80 px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm hover:bg-white/10 hover:text-white transition flex-1 sm:flex-none text-center"
+              >
+                Приказы
+              </a>
+              <a
+                href="#faq"
+                className="border border-white/20 text-white/80 px-5 sm:px-7 py-2 sm:py-2.5 rounded-full font-sans text-xs sm:text-sm hover:bg-white/10 hover:text-white transition flex-1 sm:flex-none text-center"
+              >
+                Вопросы
+              </a>
             </div>
 
             <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-10">
@@ -100,7 +91,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ===== НАВИГАЦИОННОЕ ОГЛАВЛЕНИЕ ===== */}
       <section className="py-12 sm:py-16 bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
@@ -130,39 +120,38 @@ export default function Index() {
                   stats: ["Основан в 2026", "Ведущие эксперты ДВГМУ"],
                 },
                 {
-                  label: "О программе",
-                  icon: TargetIcon,
-                  href: "#about",
-                  desc: "Дополнительная профессиональная программа повышения квалификации. Совершенствование компетенций в области организации, внедрения и сопровождения системы наставничества.",
-                  stats: ["Заочная форма с ДОТ"],
-                },
-                {
-                  label: "Документы",
-                  icon: FileCheckIcon,
-                  href: "#documents",
-                  desc: "Нормативно-правовая база наставничества: Федеральный закон № 424-ФЗ, Положение о наставничестве (приказ № 167н), Заявка на обучение в ИНПОА.",
-                  stats: ["Основные документы"],
-                },
-                {
                   label: "Состав УМЦ",
                   icon: UsersIcon,
                   href: "#teachers",
-                  desc: "Учебно-методический центр возглавляют ведущие специалисты ДВГМУ: проректоры, директора институтов, деканы факультетов — 6 экспертов.",
+                  desc: "Учебно-методический центр возглавляют ведущие специалисты ДВГМУ: проректоры, директора институтов, деканы факультетов ",
                   stats: ["Доктора и кандидаты наук"],
                 },
                 {
-                  label: "Контакты",
-                  icon: Phone,
-                  href: "#contacts",
-                  desc: "По вопросам образовательной деятельности и методического сопровождения наставников вы можете обратиться по указанным телефонам и электронной почте.",
-                  stats: ["Телефон и email"],
+                  label: "Нормативно-правовая база наставничества",
+                  icon: FileCheckIcon,
+                  href: "#documents",
+                  desc: "Федеральный закон № 424-ФЗ, Положение о наставничестве (приказ № 167н)",
+                  stats: ["Докумены..."],
+                },
+                {
+                  label: "Обучение",
+                  icon: TargetIcon,
+                  href: "#about",
+                  desc: "Цикл ПК: Организация системы наставничества в учреждениях здравоохранениях. \n Цикл ПК: Выпускник как объект наставничества",
+                  stats: ["Заявка на обучение"],
                 },
                 {
                   label: "Вопросы",
                   icon: AwardIcon,
                   href: "#faq",
                   desc: "Ответы на часто задаваемые вопросы о наставничестве: кто должен проходить, сколько длится, где можно проходить, что будет при непрохождении.",
-                  stats: ["Подробные ответы"],
+                  stats: ["Воспросы/ответы"],
+                },
+                {
+                  label: "Контакты",
+                  icon: Phone,
+                  href: "#contacts",
+                  desc: `Образовательная деятельность: ... Методическое сопровождение: ...`,
                 },
               ].map((item) => {
                 const Icon = item.icon;
@@ -187,17 +176,19 @@ export default function Index() {
                       {item.desc}
                     </p>
 
-                    <div className="relative z-10 flex flex-wrap gap-3">
-                      {item.stats.map((stat, i) => (
-                        <span
-                          key={i}
-                          className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-sans text-[#c9a84c] bg-[#c9a84c]/5 px-3 py-1 rounded-full"
-                        >
-                          <span className="w-1 h-1 bg-[#c9a84c] rounded-full"></span>
-                          {stat}
-                        </span>
-                      ))}
-                    </div>
+                    {item.stats && item.stats.length != 0 && (
+                      <div className="relative z-10 flex flex-wrap gap-3">
+                        {item.stats.map((stat, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-sans text-[#c9a84c] bg-[#c9a84c]/5 px-3 py-1 rounded-full"
+                          >
+                            <span className="w-1 h-1 bg-[#c9a84c] rounded-full"></span>
+                            {stat}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
                     <div className="relative z-10 mt-4 flex items-center gap-2 text-[#c9a84c] font-sans text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span>Перейти к разделу</span>
@@ -596,7 +587,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
       <section className="py-12 sm:py-24 bg-[#f8f6f0]" id="faq">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -623,60 +613,139 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
-            {[
-              {
-                q: "Кто должен проходить наставничество?",
-                a: "Наставничество проходят выпускники медицинских колледжей, специалитета и ординатуры, которые впервые прошли первичную или первичную специализированную аккредитацию после 1 марта 2026 года, независимо от формы обучения (бюджетной или платной).",
-              },
-              {
-                q: "Нужно ли проходить наставничество, если диплом получен раньше 1 марта 2026 года?",
-                a: "Требование распространяется только на специалистов, которые получили диплом и впервые прошли аккредитацию после 1 марта 2026 года.",
-              },
-              {
-                q: "Где можно проходить наставничество?",
-                a: "Наставничество проходит в медицинских организациях, работающих в системе обязательного медицинского страхования (ОМС). Списки таких организаций размещены на сайтах региональных органов исполнительной власти в сфере здравоохранения. Специалисты, обучавшиеся по целевому направлению, проходят наставничество в организации, с которой заключен договор.",
-              },
-              {
-                q: "Можно ли изменить место прохождения наставничества?",
-                a: "Да. Место наставничества можно менять. Главное условие — суммарно пройти установленный срок наставничества, определенный для специальности.",
-              },
-              {
-                q: "Сколько длится наставничество?",
-                a: "Срок наставничества может составлять до 3 лет. Конкретная продолжительность зависит от специальности и места работы, устанавливается Министерством здравоохранения Российской Федерации (приказ №166н от 05.03.26).",
-              },
-              {
-                q: "На какой объем занятости нужно работать наставляемому? И возможно ли совместительство?",
-                a: "Наставничество осуществляется только по основному месту работы на любой объем занятости, определенный Трудовым кодексом РФ. Совместительство разрешено, в том числе в медицинских организациях, не участвующих в программах госгарантий.",
-              },
-              {
-                q: "Можно ли продолжить обучение на следующем уровне образования (ординатура-аспирантура), если не прошел наставничество?",
-                a: "Да, можно. Во время обучения в ординатуре специалист может работать по специальности, полученной ранее, и проходить наставничество. Решение учиться и работать — добровольное. По окончании обучения в ординатуре также предусмотрено наставничество.",
-              },
-              {
-                q: "Есть ли сокращенные сроки наставничества?",
-                a: "Да. Сокращенный срок может применяться для специалистов, работающих в небольших населенных пунктах, городах с населением до 50 тысяч человек, а также в новых регионах.",
-              },
-              {
-                q: "Что будет, если не пройти наставничество?",
-                a: "Наставничество является обязательным условием для допуска к периодической аккредитации. Если специалист в течение 5 лет после первичной или первичной специализированной аккредитации не прошел установленный период наставничества, он не допускается к периодической аккредитации и должен будет заново пройти процедуру первичной аккредитации. Штрафы за непрохождение наставничества законом не установлены.",
-              },
-            ].map((item, i) => (
-              <details
-                key={i}
-                className="group border-b border-gray-100 py-4 sm:py-6 open:border-[#c9a84c]/30"
-              >
-                <summary className="flex justify-between items-center cursor-pointer text-[#1a1a2e] font-serif text-sm sm:text-lg hover:text-[#c9a84c] transition">
-                  <span className="pr-4">{item.q}</span>
-                  <span className="text-[#c9a84c] text-xl sm:text-2xl group-open:rotate-45 transition-transform flex-shrink-0">
-                    +
-                  </span>
-                </summary>
-                <p className="text-gray-500 font-serif text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
-                  {item.a}
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
+            {/* Левая колонка - FAQ */}
+            <div className="lg:col-span-2 space-y-3 sm:space-y-4">
+              {[
+                {
+                  q: "Кто должен проходить наставничество?",
+                  a: "Наставничество проходят выпускники медицинских колледжей, специалитета и ординатуры, которые впервые прошли первичную или первичную специализированную аккредитацию после 1 марта 2026 года, независимо от формы обучения (бюджетной или платной).",
+                },
+                {
+                  q: "Нужно ли проходить наставничество, если диплом получен раньше 1 марта 2026 года?",
+                  a: "Требование распространяется только на специалистов, которые получили диплом и впервые прошли аккредитацию после 1 марта 2026 года.",
+                },
+                {
+                  q: "Где можно проходить наставничество?",
+                  a: "Наставничество проходит в медицинских организациях, работающих в системе обязательного медицинского страхования (ОМС). Списки таких организаций размещены на сайтах региональных органов исполнительной власти в сфере здравоохранения. Специалисты, обучавшиеся по целевому направлению, проходят наставничество в организации, с которой заключен договор.",
+                },
+                {
+                  q: "Можно ли изменить место прохождения наставничества?",
+                  a: "Да. Место наставничества можно менять. Главное условие — суммарно пройти установленный срок наставничества, определенный для специальности.",
+                },
+                {
+                  q: "Сколько длится наставничество?",
+                  a: "Срок наставничества может составлять до 3 лет. Конкретная продолжительность зависит от специальности и места работы, устанавливается Министерством здравоохранения Российской Федерации (приказ №166н от 05.03.26).",
+                },
+                {
+                  q: "На какой объем занятости нужно работать наставляемому? И возможно ли совместительство?",
+                  a: "Наставничество осуществляется только по основному месту работы на любой объем занятости, определенный Трудовым кодексом РФ. Совместительство разрешено, в том числе в медицинских организациях, не участвующих в программах госгарантий.",
+                },
+                {
+                  q: "Можно ли продолжить обучение на следующем уровне образования (ординатура-аспирантура), если не прошел наставничество?",
+                  a: "Да, можно. Во время обучения в ординатуре специалист может работать по специальности, полученной ранее, и проходить наставничество. Решение учиться и работать — добровольное. По окончании обучения в ординатуре также предусмотрено наставничество.",
+                },
+                {
+                  q: "Есть ли сокращенные сроки наставничества?",
+                  a: "Да. Сокращенный срок может применяться для специалистов, работающих в небольших населенных пунктах, городах с населением до 50 тысяч человек, а также в новых регионах.",
+                },
+                {
+                  q: "Что будет, если не пройти наставничество?",
+                  a: "Наставничество является обязательным условием для допуска к периодической аккредитации. Если специалист в течение 5 лет после первичной или первичной специализированной аккредитации не прошел установленный период наставничества, он не допускается к периодической аккредитации и должен будет заново пройти процедуру первичной аккредитации. Штрафы за непрохождение наставничества законом не установлены.",
+                },
+              ].map((item, i) => (
+                <details
+                  key={i}
+                  className="group border-b border-gray-100 py-4 sm:py-6 open:border-[#c9a84c]/30 bg-white px-4 sm:px-6 hover:shadow-sm transition-shadow"
+                >
+                  <summary className="flex justify-between items-center cursor-pointer text-[#1a1a2e] font-serif text-sm sm:text-lg hover:text-[#c9a84c] transition">
+                    <span className="pr-4">{item.q}</span>
+                    <span className="text-[#c9a84c] text-xl sm:text-2xl group-open:rotate-45 transition-transform flex-shrink-0">
+                      +
+                    </span>
+                  </summary>
+                  <p className="text-gray-500 font-serif text-sm sm:text-base mt-3 sm:mt-4 leading-relaxed">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+
+            <div className="lg:col-span-1">
+              <div className="bg-white p-6 sm:p-8 border border-gray-200 sticky top-32">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-[#c9a84c] text-xl">✉</span>
+                  <h3 className="font-serif text-[#1a1a2e] text-lg">
+                    Задать вопрос
+                  </h3>
+                </div>
+                <p className="text-gray-500 font-sans text-sm mb-6">
+                  Не нашли ответ? Напишите нам, и мы ответим в ближайшее время
                 </p>
-              </details>
-            ))}
+
+                <form className="space-y-4">
+                  <div>
+                    <label className="text-gray-400 text-[10px] uppercase tracking-widest font-sans block mb-1">
+                      Ваше имя
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Имя и фамилия"
+                      className="w-full border border-gray-200 rounded-none px-4 py-3 text-[#1a1a2e] placeholder-gray-400 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-gray-400 text-[10px] uppercase tracking-widest font-sans block mb-1">
+                      Email или телефон
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="email@example.com или +7 (___) ___-__-__"
+                      className="w-full border border-gray-200 rounded-none px-4 py-3 text-[#1a1a2e] placeholder-gray-400 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-gray-400 text-[10px] uppercase tracking-widest font-sans block mb-1">
+                      Ваш вопрос
+                    </label>
+                    <textarea
+                      placeholder="Опишите ваш вопрос..."
+                      rows={4}
+                      className="w-full border border-gray-200 rounded-none px-4 py-3 text-[#1a1a2e] placeholder-gray-400 focus:outline-none focus:border-[#c9a84c] transition font-serif text-sm resize-none"
+                    />
+                  </div>
+
+                  <div className="flex items-start gap-2">
+                    <input
+                      type="checkbox"
+                      className="mt-1 w-4 h-4 border-gray-300 checked:bg-[#c9a84c] rounded flex-shrink-0"
+                    />
+                    <label className="text-gray-400 text-[10px] font-sans">
+                      Я даю согласие на обработку персональных данных
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-[#c9a84c] text-[#1a1a2e] py-3 rounded-full font-sans uppercase tracking-widest text-xs hover:bg-[#d4b85c] transition"
+                  >
+                    Отправить вопрос
+                  </button>
+                </form>
+
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <p className="text-center text-[10px] text-gray-400 font-sans">
+                    Или напишите нам на email:{" "}
+                    <a
+                      href="mailto:fpk@fesmu.ru"
+                      className="text-[#c9a84c] hover:underline"
+                    >
+                      fpk@fesmu.ru
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
