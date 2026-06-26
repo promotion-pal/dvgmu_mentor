@@ -3,16 +3,21 @@ services:
     build:
       context: "./"
       dockerfile: Dockerfile
+    restart: always
     networks:
       - traefik-network
     labels:
       - "traefik.enable=true"
+
       - "traefik.http.routers.mentor-web.rule=Host(`mentor.dvgmu.promotion-pal.ru`)"
       - "traefik.http.routers.mentor-web.entrypoints=web"
-      - "traefik.http.routers.mentor-web.middlewares=redirect-to-https"
+      - "traefik.http.routers.mentor-web.middlewares=redirect-to-https@docker"
+
       - "traefik.http.routers.mentor-web-secure.rule=Host(`mentor.dvgmu.promotion-pal.ru`)"
       - "traefik.http.routers.mentor-web-secure.entrypoints=websecure"
+      - "traefik.http.routers.mentor-web-secure.tls=true"
       - "traefik.http.routers.mentor-web-secure.tls.certresolver=letsencrypt"
+
       - "traefik.http.services.mentor-web.loadbalancer.server.port=3000"
 
 networks:
